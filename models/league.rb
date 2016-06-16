@@ -49,7 +49,17 @@ class League
         return winning_matches.length
     end
 
+    def matches_lost(team_id)
+        losing_matches = @matches.select { | match | match.home_team_id == team_id && match.home_team_score < match.away_team_score || match.away_team_id == team_id && match.away_team_score < match.home_team_score}
 
+          return losing_matches.length
+      end
+
+    def matches_drawn(team_id)
+        drawn_matches = @matches.select { | match | match.home_team_id == team_id && match.home_team_score == match.away_team_score || match.away_team_id == team_id && match.away_team_score == match.home_team_score}
+
+          return drawn_matches.length
+      end
 
 
 end

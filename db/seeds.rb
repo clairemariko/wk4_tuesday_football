@@ -1,4 +1,4 @@
-require_relative( '../models/match' )
+_require_relative( '../models/match' )
 require_relative( '../models/team' )
 require( 'pry-byebug' )
 
@@ -23,5 +23,17 @@ match = Match.create( {
           'home_team_score' => 5,
           'away_team_score' => 2 
           } )
-# binding.pry
+match = Match.create( { 
+          'home_team_id' => team4.id, 
+          'away_team_id' => team1.id,
+          'home_team_score' => 5,
+          'away_team_score' => 2 
+          } )
+match= Match.create( { 
+          'home_team_id' => team3.id, 
+          'away_team_id' => team2.id,
+          'home_team_score' => 2,
+          'away_team_score' => 2 
+          } )
+
 nil

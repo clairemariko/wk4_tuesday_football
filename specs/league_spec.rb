@@ -40,9 +40,11 @@ def setup
       'id' => 4,
       'home_team_id' => @team3.id,
       'away_team_id' => @team1.id,
-      'home_team_score' => 1,
+      'home_team_score' => 4,
       'away_team_score' => 4
        })
+
+
 
   @matches = [@match1, @match2, @match3, @match4]
   options = {
@@ -86,8 +88,19 @@ end
 
   def test_matches_won
     result = @league.matches_won(@team1.id)
-    assert_equal(2, result)
+    assert_equal(1, result)
   end
+
+  def test_matches_lost
+    result = @league.matches_lost(@team1.id)
+    assert_equal(0 , result)
+  end
+
+  def test_matches_drawn
+    result = @league.matches_drawn(@team3.id)
+    assert_equal(1, result)
+  end
+
 
 
 end

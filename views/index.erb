@@ -6,14 +6,17 @@
   <thead>
     <th>Team</th>
     <th>Won</th>
+    <th>Lost</th>
+    <th>Draw</th>
   </thead>
 
   <tbody>
     <% @league.teams.each do |team| %>
       <tr>
         <td><%= team.name%></td>
-        <td><%= @league.matches_won(team.id) %></td>
+        <td><%= @league.matches_won(team.id) %></td><td><%= @league.matches_lost(team.id) %></td><td><%= @league.matches_drawn(team.id) %></td>
       </tr>
+
     <% end %>
 
 
